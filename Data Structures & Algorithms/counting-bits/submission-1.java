@@ -1,0 +1,27 @@
+class Solution {
+    public int[] countBits(int n) {
+
+        int [] numbers = new int[n+1];
+
+        for (int i = 0; i <= n; i++) {
+            numbers[i] = binary(i);
+        }
+        return numbers;
+    }
+
+    public int binary(int num) {
+        if (num == 0) {
+            return 0;
+        }
+
+        //StringBuilder sb = new StringBuilder();
+        int count = 0;
+        while (num > 0) {
+            if (num%2 == 1) {
+                count++;
+            }
+            num = num /2;
+        }
+        return count;
+    }
+}
